@@ -1,4 +1,4 @@
-﻿using Exiled.Events.EventArgs;
+using Exiled.Events.EventArgs;
 using Exiled.API.Features;
 using Interactables.Interobjects.DoorUtils;
 
@@ -10,16 +10,14 @@ namespace _939destroysdoors
         {
             if(ev.Player.Role == RoleType.Scp93953)
             {
-                var door = ev.Door as IDamageableDoor;
-
-                door.IsDestroyed = true;
+                if (ev.Door is IDamageableDoor door)
+                    door.IsDestroyed = true;
             }
 
             else if(ev.Player.Role == RoleType.Scp93989)
             {
-                var door = ev.Door as IDamageableDoor;
-
-                door.IsDestroyed = true;
+                if (ev.Door is IDamageableDoor door)
+                    door.IsDestroyed = true;
             }
 
         }
